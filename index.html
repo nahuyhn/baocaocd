@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ôn báo cáo Chuyên đề 2 - Mạng doanh nghiệp VPN</title>
+<style>
+:root {--bg:#0f172a;--card:#111827;--soft:#1f2937;--text:#e5e7eb;--muted:#9ca3af;--brand:#38bdf8;--ok:#22c55e;--warn:#f59e0b;}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#020617,#0f172a 35%,#111827);color:var(--text);line-height:1.55}
+a{color:inherit} .top{position:sticky;top:0;z-index:9;background:rgba(2,6,23,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08);padding:10px 12px}
+.top h1{font-size:16px;margin:0 0 8px} .nav{display:flex;gap:8px;overflow:auto;padding-bottom:2px} .nav a{white-space:nowrap;text-decoration:none;background:#1e293b;padding:8px 10px;border-radius:999px;font-size:13px;color:#cbd5e1} .nav a.hot{background:linear-gradient(135deg,#0284c7,#0369a1);color:white}
+main{max-width:980px;margin:auto;padding:14px} .hero{padding:18px;border:1px solid rgba(255,255,255,.1);background:rgba(15,23,42,.75);border-radius:22px;margin:12px 0 16px;box-shadow:0 15px 50px rgba(0,0,0,.25)}
+.hero h2{margin:0 0 8px;font-size:24px} .pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px} .pill{background:#0f766e;color:white;border-radius:999px;padding:7px 10px;font-size:13px}
+.slide-card{background:rgba(17,24,39,.92);border:1px solid rgba(255,255,255,.09);border-radius:22px;margin:18px 0;padding:14px;box-shadow:0 10px 28px rgba(0,0,0,.24)}
+.slide-head span{display:inline-block;color:#020617;background:var(--brand);font-weight:800;padding:4px 9px;border-radius:999px;font-size:12px} .slide-head h2{font-size:21px;line-height:1.25;margin:8px 0 12px}
+.slide-img{width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:white;display:block}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px} .box,.script{background:rgba(31,41,55,.72);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:12px;margin-top:12px} .box h3{margin:0 0 8px;font-size:16px;color:#bae6fd} .box ul{margin:0;padding-left:20px} .box li{margin:5px 0} details summary{cursor:pointer;font-weight:800;color:#bfdbfe} .script p,.qa-list p{white-space:pre-line;margin:10px 0 0}
+.qa-list details{background:#0f172a;border:1px solid rgba(255,255,255,.08);border-radius:12px;margin:8px 0;padding:10px} .qa-list summary{color:#fde68a}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px} .flow span,.mini-grid div,.tree{background:#0f172a;border:1px solid rgba(56,189,248,.35);border-radius:14px;padding:10px} .flow b{color:var(--brand)} .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px} .mini-grid b{color:#86efac}
+.diagram{margin-top:10px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap} .diagram .node,.diagram .branch,.diagram .site{background:#0f172a;border:1px solid rgba(34,197,94,.45);padding:14px;border-radius:16px;text-align:center;min-width:130px} .diagram .hq{border-color:#38bdf8} .diagram .remote{background:#312e81;border:1px solid #818cf8;padding:12px;border-radius:16px;text-align:center} .tunnel{border:1px dashed #fbbf24;color:#fde68a;border-radius:999px;padding:9px 12px;text-align:center} .tunnel.big{border-radius:16px;min-width:180px}
+figure{margin:12px 0 0} figure img{max-width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:white} figcaption{font-size:12px;color:var(--muted);margin-top:4px} .tree ul{margin:8px 0 0}
+.checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px} .checklist div{background:#0f172a;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:10px} .footer{color:#94a3b8;text-align:center;padding:30px 10px}
+.btns{position:fixed;right:12px;bottom:12px;z-index:20;display:flex;flex-direction:column;gap:8px} .btns a{text-decoration:none;background:#0284c7;color:white;padding:10px 12px;border-radius:999px;box-shadow:0 8px 18px rgba(0,0,0,.35);font-weight:700;font-size:13px}
+@media(max-width:720px){main{padding:10px} .grid2,.checklist{grid-template-columns:1fr} .hero h2{font-size:21px} .slide-head h2{font-size:19px} .slide-card{padding:10px;border-radius:18px} .top h1{font-size:14px} .flow{display:grid;grid-template-columns:1fr;gap:6px} .flow b{display:none} .mini-grid{grid-template-columns:1fr}}
+@media print{.top,.btns{display:none} body{background:white;color:#111} .slide-card,.box,.script{break-inside:avoid;background:white;color:#111;border:1px solid #ddd}}
+</style>
+</head>
+<body>
+<header class="top">
+<h1>Ôn báo cáo Chuyên đề 2 - Mạng doanh nghiệp VPN</h1>
+<nav class="nav">
+<a href="#tongquan">Tổng quan</a><a class="hot" href="#slide-9">Slide 9</a><a class="hot" href="#slide-10">Slide 10</a><a class="hot" href="#slide-11">Slide 11</a><a class="hot" href="#slide-12">Slide 12</a><a class="hot" href="#slide-13">Slide 13</a><a class="hot" href="#slide-14">Slide 14</a><a class="hot" href="#slide-15">Slide 15</a><a class="hot" href="#slide-16">Slide 16</a><a href="#hoidap">Hỏi đáp</a>
+</nav>
+</header>
+<main>
+<section class="hero" id="tongquan">
+<h2>Học nhanh trên điện thoại</h2>
+<p>Bản này dùng để học trước khi báo cáo. Bạn chỉ cần kéo từng slide, xem ảnh slide, đọc ý cần nhớ, thoại thuyết trình, sơ đồ trực quan và câu hỏi có thể bị hỏi.</p>
+<div class="pillrow"><span class="pill">HQ: 192.168.10.0/24</span><span class="pill">CN1: 192.168.20.0/24</span><span class="pill">CN2: 192.168.30.0/24</span><span class="pill">Server: 192.168.10.10</span><span class="pill">Domain: DS.com</span></div>
+<div class="box"><h3>Luồng tổng quát cần thuộc</h3><div class="flow"><span>Client nhận IP</span><b>→</b><span>DNS tìm dịch vụ</span><b>→</b><span>AD xác thực</span><b>→</b><span>VPN nối chi nhánh</span><b>→</b><span>DFS/File/Web/Mail</span><b>→</b><span>GPO/FSRM/Backup quản trị</span></div></div>
+</section>
+
+<section class="slide-card" id="slide-1">
+  <div class="slide-head"><span>Slide 1</span><h2>Trang bìa đề tài</h2></div>
+  <img class="slide-img" src="assets/slides/slide-01.png" alt="Slide 1">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>Tên đề tài</li><li>Thành viên nhóm</li><li>GV hướng dẫn</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>Tổng quan đề tài</p></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Kính chào thầy và các bạn. Nhóm em xin trình bày chuyên đề: Thiết kế và triển khai hệ thống mạng doanh nghiệp đa chi nhánh sử dụng VPN và quản trị dịch vụ tập trung.</p></details>
+  
+</section>
+
+<section class="slide-card" id="slide-2">
+  <div class="slide-head"><span>Slide 2</span><h2>Lý do chọn đề tài</h2></div>
+  <img class="slide-img" src="assets/slides/slide-02.png" alt="Slide 2">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>Doanh nghiệp có nhiều chi nhánh</li><li>Cần chia sẻ dữ liệu và quản lý thống nhất</li><li>VPN + Windows Server là giải pháp mô phỏng phù hợp</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>Vấn đề: chi nhánh phân tán → cần kết nối tập trung</p></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Nhóm em chọn đề tài này vì trong thực tế, nhiều doanh nghiệp không chỉ hoạt động tại một trụ sở duy nhất mà còn có nhiều chi nhánh. Khi đó, các chi nhánh cần kết nối với nhau để chia sẻ dữ liệu, sử dụng tài nguyên nội bộ và quản lý người dùng một cách thống nhất. Nếu mỗi chi nhánh tự quản lý riêng, hệ thống sẽ dễ bị phân tán, khó kiểm soát tài khoản, phân quyền và chính sách sử dụng máy tính. Vì vậy, nhóm lựa chọn giải pháp sử dụng VPN để kết nối an toàn giữa các điểm mạng, kết hợp Windows Server để quản trị dịch vụ tập trung.</p></details>
+  
+</section>
+
+<section class="slide-card" id="slide-3">
+  <div class="slide-head"><span>Slide 3</span><h2>Mục tiêu đề tài</h2></div>
+  <img class="slide-img" src="assets/slides/slide-03.png" alt="Slide 3">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>Xây dựng mô hình HQ, CN1, CN2</li><li>Kết nối VPN Site-to-Site</li><li>Hỗ trợ VPN Client-to-Site</li><li>Quản trị dịch vụ tập trung bằng Windows Server</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>Mục tiêu kỹ thuật của toàn hệ thống</p></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Với đề tài này, mục tiêu chính của nhóm là xây dựng một mô hình mạng doanh nghiệp đa chi nhánh gồm trụ sở chính HQ và hai chi nhánh CN1, CN2. Hệ thống cần đảm bảo các chi nhánh có thể kết nối an toàn với nhau thông qua VPN Site-to-Site. Ngoài ra, mô hình cũng hỗ trợ người dùng từ xa truy cập vào mạng nội bộ bằng VPN Client-to-Site. Bên cạnh phần kết nối, nhóm còn triển khai Windows Server để quản trị tập trung người dùng, dịch vụ và tài nguyên. Sau cùng, hệ thống được kiểm thử để đánh giá xem các thành phần có hoạt động đúng theo yêu cầu hay không.</p></details>
+  
+</section>
+
+<section class="slide-card" id="slide-4">
+  <div class="slide-head"><span>Slide 4</span><h2>Phạm vi thực hiện</h2></div>
+  <img class="slide-img" src="assets/slides/slide-04.png" alt="Slide 4">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>Lab trên VMware Workstation</li><li>Windows Server 2019</li><li>Packet Tracer dùng minh họa sơ đồ</li><li>Chưa triển khai thực tế doanh nghiệp</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>Giới hạn phạm vi lab</p></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Về phạm vi thực hiện, nhóm xây dựng mô hình gồm một trụ sở chính HQ và hai chi nhánh CN1, CN2. Toàn bộ phần cài đặt, cấu hình và kiểm thử dịch vụ được triển khai chủ yếu trên VMware Workstation với nền tảng Windows Server 2019. Cisco Packet Tracer chỉ được dùng để minh họa sơ đồ kết nối mạng, chứ không phải môi trường kiểm thử chính. Vì vậy, đề tài tập trung vào mô phỏng và đánh giá tính khả thi của hệ thống trong phạm vi lab, chưa triển khai trên hạ tầng doanh nghiệp thực tế.</p></details>
+  
+</section>
+
+<section class="slide-card" id="slide-5">
+  <div class="slide-head"><span>Slide 5</span><h2>Mô hình tổng quan</h2></div>
+  <img class="slide-img" src="assets/slides/slide-05.png" alt="Slide 5">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>HQ đặt máy chủ trung tâm</li><li>CN1/CN2 dùng dịch vụ qua VPN</li><li>Người dùng từ xa vào qua Client-to-Site</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>HQ là trung tâm, CN1/CN2 kết nối về HQ</p><div class="diagram three"><div class="node hq">HQ<br><small>Server trung tâm</small></div><div class="tunnel">VPN Site-to-Site</div><div class="branch">CN1</div><div class="branch">CN2</div><div class="remote">Remote User<br><small>Client-to-Site</small></div></div><figure><img src="assets/sodomang.png" alt="Sơ đồ mạng"><figcaption>Sơ đồ mạng gốc trong file.</figcaption></figure></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Đây là mô hình tổng quan của hệ thống. Nhóm xây dựng mô hình gồm một trụ sở chính HQ và hai chi nhánh CN1, CN2. Tại HQ đặt máy chủ trung tâm, cung cấp các dịch vụ như quản lý tài khoản, DNS, DHCP, chia sẻ dữ liệu, web nội bộ, mail nội bộ và backup. Hai chi nhánh CN1 và CN2 không đặt máy chủ riêng mà kết nối về HQ thông qua VPN Site-to-Site để sử dụng dịch vụ tập trung. Ngoài ra, hệ thống còn hỗ trợ người dùng từ xa kết nối vào mạng nội bộ bằng VPN Client-to-Site.</p></details>
+  
+</section>
+
+<section class="slide-card" id="slide-6">
+  <div class="slide-head"><span>Slide 6</span><h2>Công nghệ VPN sử dụng</h2></div>
+  <img class="slide-img" src="assets/slides/slide-06.png" alt="Slide 6">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>Site-to-Site nối LAN các chi nhánh</li><li>Client-to-Site cho người dùng từ xa</li><li>RRAS trên Windows Server tạo VPN</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>Hai loại VPN trong bài</p></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Trong hệ thống này, VPN là công nghệ chính dùng để kết nối các điểm mạng ở xa. Với VPN Site-to-Site, trụ sở chính HQ có thể kết nối với hai chi nhánh CN1 và CN2 thông qua đường hầm VPN, giúp các mạng LAN ở các địa điểm khác nhau liên thông với nhau. Ngoài ra, hệ thống còn triển khai VPN Client-to-Site để người dùng từ xa có thể kết nối vào mạng nội bộ của doanh nghiệp. Toàn bộ phần VPN trong mô hình được cấu hình bằng dịch vụ RRAS trên Windows Server.</p></details>
+  
+</section>
+
+<section class="slide-card" id="slide-7">
+  <div class="slide-head"><span>Slide 7</span><h2>Kiến trúc dịch vụ tập trung</h2></div>
+  <img class="slide-img" src="assets/slides/slide-07.png" alt="Slide 7">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>AD/GPO quản trị</li><li>DNS/DHCP hạ tầng</li><li>VPN + NPS truy cập</li><li>Web/Mail/File/DFS ứng dụng</li><li>FSRM/Backup kiểm soát và phục hồi</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>Các dịch vụ nằm tập trung tại HQ</p><figure><img src="assets/sododichvu.png" alt="Sơ đồ dịch vụ"><figcaption>Sơ đồ dịch vụ gốc trong file.</figcaption></figure></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Sau khi có mô hình mạng tổng quan, nhóm triển khai kiến trúc dịch vụ theo hướng tập trung tại trụ sở chính HQ. Máy chủ trung tâm sẽ cung cấp các dịch vụ quản trị như Active Directory và Group Policy, dịch vụ hạ tầng như DNS và DHCP, dịch vụ truy cập như VPN kết hợp NPS/RADIUS, cùng các dịch vụ ứng dụng như Web Server, Mail Server, File Server và DFS. Ngoài ra, hệ thống còn có FSRM để kiểm soát tài nguyên lưu trữ và Windows Server Backup để hỗ trợ sao lưu, phục hồi dữ liệu. Cách thiết kế này giúp các chi nhánh không cần máy chủ riêng nhưng vẫn sử dụng được dịch vụ thống nhất từ HQ.</p></details>
+  
+</section>
+
+<section class="slide-card" id="slide-8">
+  <div class="slide-head"><span>Slide 8</span><h2>Quy hoạch IP</h2></div>
+  <img class="slide-img" src="assets/slides/slide-08.png" alt="Slide 8">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>HQ: 192.168.10.0/24</li><li>CN1: 192.168.20.0/24</li><li>CN2: 192.168.30.0/24</li><li>Server trung tâm: 192.168.10.10</li><li>WAN dùng các dải 10.0.x.0/30</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>Mỗi khu vực là một subnet riêng</p></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Sau khi xác định mô hình mạng, nhóm tiến hành quy hoạch địa chỉ IP cho từng khu vực. Trụ sở chính HQ sử dụng dải 192.168.10.0/24, chi nhánh CN1 dùng 192.168.20.0/24 và chi nhánh CN2 dùng 192.168.30.0/24. Việc tách mỗi khu vực thành một subnet riêng giúp hệ thống dễ định tuyến, dễ quản lý và dễ mở rộng về sau. Máy chủ trung tâm được đặt tại HQ với địa chỉ 192.168.10.10, còn các router trong từng LAN đóng vai trò gateway. Ngoài ra, hệ thống còn dùng các dải 10.0.x.0/30 để mô phỏng kết nối WAN giữa các router.</p></details>
+  
+</section>
+
+<section class="slide-card" id="slide-9">
+  <div class="slide-head"><span>Slide 9</span><h2>Hạ tầng mạng lõi: DC, OU, DNS, DHCP, Relay</h2></div>
+  <img class="slide-img" src="assets/slides/slide-09.png" alt="Slide 9">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>DC quản lý domain DS.com</li><li>OU chia HQ/CN1/CN2</li><li>DNS phân giải tên miền nội bộ</li><li>DHCP cấp IP tự động</li><li>DHCP Relay chuyển yêu cầu từ chi nhánh về HQ</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>Client bật máy → xin IP → tìm DC → đăng nhập domain</p><div class="flow"><span>Client bật máy</span><b>→</b><span>DHCP/Relay cấp IP</span><b>→</b><span>DNS tìm DC</span><b>→</b><span>DC xác thực user</span><b>→</b><span>OU/GPO áp chính sách</span></div><div class="mini-grid"><div><b>DC</b><br>Phòng nhân sự + bảo vệ</div><div><b>DNS</b><br>Danh bạ tên → IP</div><div><b>DHCP</b><br>Lễ tân cấp số IP</div><div><b>Relay</b><br>Người chuyển yêu cầu</div></div></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Ở phần hạ tầng mạng lõi, nhóm triển khai Domain Controller với tên miền nội bộ là DS.com. Trong Active Directory, các tài khoản và nhóm người dùng được tổ chức theo ba OU tương ứng với HQ, CN1 và CN2 để thuận tiện cho quản trị theo từng khu vực. Bên cạnh đó, DNS Server được cấu hình để phân giải tên miền nội bộ, hỗ trợ hoạt động của domain và các dịch vụ như web, mail. DHCP Server được dùng để cấp phát địa chỉ IP tự động cho các máy client. Vì DHCP Server đặt tại HQ, nên các router chi nhánh cần cấu hình DHCP Relay để chuyển tiếp yêu cầu cấp IP từ CN1 và CN2 về máy chủ trung tâm.</p></details>
+  <div class="box"><h3>Câu có thể bị hỏi</h3><div class="qa-list"><details><summary>Domain Controller là gì?</summary><p>Là máy chủ trung tâm quản lý domain: xác thực tài khoản, quản lý máy tính, user và chính sách. Hình dung như phòng nhân sự kiêm bảo vệ cổng của hệ thống mạng.</p></details><details><summary>OU có phải group không?</summary><p>Không. OU là nơi tổ chức user/máy tính để quản lý và áp GPO. Group chủ yếu dùng để cấp quyền truy cập tài nguyên.</p></details><details><summary>DNS và DHCP khác nhau thế nào?</summary><p>DNS đổi tên thành IP. DHCP cấp IP tự động cho client.</p></details><details><summary>DHCP Relay có cấp IP không?</summary><p>Không. Relay chỉ chuyển tiếp yêu cầu xin IP từ chi nhánh về DHCP Server tại HQ.</p></details></div></div>
+</section>
+
+<section class="slide-card" id="slide-10">
+  <div class="slide-head"><span>Slide 10</span><h2>VPN Site-to-Site</h2></div>
+  <img class="slide-img" src="assets/slides/slide-10.png" alt="Slide 10">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>RRAS trên Router-HQ/CN1/CN2</li><li>Demand-Dial tạo đường hầm</li><li>Route cho 3 subnet liên thông</li><li>Kiểm thử ping HQ ↔ CN1/CN2</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>LAN HQ nối LAN chi nhánh bằng đường hầm VPN</p><div class="diagram vpn"><div class="site">LAN HQ<br><small>192.168.10.0/24</small></div><div class="tunnel big">Đường hầm VPN<br>RRAS + Demand-Dial</div><div class="site">LAN CN1/CN2<br><small>192.168.20/30.0</small></div></div></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Sau khi hoàn thành hạ tầng cơ bản, nhóm triển khai VPN Site-to-Site để kết nối trụ sở chính với hai chi nhánh. Ba router ảo gồm Router-HQ, Router-CN1 và Router-CN2 được cấu hình dịch vụ RRAS. Trên các router này, nhóm tạo Demand-Dial Interface để thiết lập đường hầm VPN giữa HQ và từng chi nhánh. Ngoài việc tạo kết nối VPN, nhóm còn cấu hình định tuyến để các subnet LAN như 192.168.10.0, 192.168.20.0 và 192.168.30.0 có thể liên thông. Kết quả kiểm thử cho thấy HQ ping thành công đến CN1 và CN2, chứng minh kết nối Site-to-Site đã hoạt động.</p></details>
+  <div class="box"><h3>Câu có thể bị hỏi</h3><div class="qa-list"><details><summary>VPN Site-to-Site dùng để làm gì?</summary><p>Dùng để nối mạng LAN giữa HQ và chi nhánh qua đường hầm VPN, giúp các subnet liên thông như cùng hệ thống doanh nghiệp.</p></details><details><summary>Demand-Dial Interface là gì?</summary><p>Là giao diện kết nối trong RRAS dùng để tạo đường hầm VPN giữa hai site.</p></details><details><summary>Kiểm thử Site-to-Site thế nào?</summary><p>Dùng ping hoặc truy cập tài nguyên giữa các subnet HQ, CN1, CN2.</p></details></div></div>
+</section>
+
+<section class="slide-card" id="slide-11">
+  <div class="slide-head"><span>Slide 11</span><h2>VPN Client-to-Site và NPS/RADIUS</h2></div>
+  <img class="slide-img" src="assets/slides/slide-11.png" alt="Slide 11">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>Người dùng từ xa kết nối vào HQ</li><li>RRAS nhận kết nối VPN</li><li>NPS/RADIUS xác thực qua AD</li><li>Client hợp lệ truy cập tài nguyên nội bộ</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>Remote client → RRAS → NPS → AD</p><div class="flow"><span>Remote Client</span><b>→</b><span>RRAS VPN</span><b>→</b><span>NPS/RADIUS</span><b>→</b><span>Active Directory</span><b>→</b><span>Cho phép truy cập</span></div></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Bên cạnh kết nối Site-to-Site giữa các chi nhánh, hệ thống còn triển khai VPN Client-to-Site để người dùng từ xa có thể truy cập vào mạng nội bộ. Khi client tạo kết nối VPN đến HQ, dịch vụ RRAS sẽ tiếp nhận yêu cầu kết nối. Tuy nhiên, thay vì để RRAS tự xác thực độc lập, hệ thống chuyển yêu cầu xác thực sang NPS/RADIUS. NPS sẽ kiểm tra tài khoản người dùng thông qua Active Directory. Nếu tài khoản hợp lệ và đáp ứng chính sách truy cập, client sẽ được phép kết nối vào VPN và sử dụng tài nguyên nội bộ. Kết quả kiểm thử cho thấy client đã kết nối VPN thành công sau khi xác thực qua NPS.</p></details>
+  <div class="box"><h3>Câu có thể bị hỏi</h3><div class="qa-list"><details><summary>Client-to-Site khác Site-to-Site thế nào?</summary><p>Site-to-Site nối hai mạng LAN. Client-to-Site cho một người dùng từ xa kết nối vào mạng nội bộ.</p></details><details><summary>NPS/RADIUS làm gì?</summary><p>Xác thực kết nối VPN tập trung bằng tài khoản trong Active Directory.</p></details><details><summary>Vì sao không để RRAS tự xác thực?</summary><p>Dùng NPS giúp quản lý chính sách truy cập tập trung và gắn với tài khoản domain.</p></details></div></div>
+</section>
+
+<section class="slide-card" id="slide-12">
+  <div class="slide-head"><span>Slide 12</span><h2>File Server, DFS và phân quyền</h2></div>
+  <img class="slide-img" src="assets/slides/slide-12.png" alt="Slide 12">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>DATA gồm HQ/CN1/CN2/Public</li><li>Phân quyền theo group</li><li>DFS Namespace: \DS.com\DS</li><li>User truy cập đúng thư mục được cấp quyền</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>Một đường dẫn chung nhưng quyền khác nhau</p><div class="tree"><b>\DS.com\DS</b><ul><li>HQ - group HQ</li><li>CN1 - group CN1</li><li>CN2 - group CN2</li><li>Public - dùng chung</li></ul></div></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Sau khi hệ thống mạng đã liên thông, nhóm triển khai File Server để chia sẻ dữ liệu nội bộ cho các chi nhánh. Trên máy chủ trung tâm, nhóm tạo thư mục DATA, bên trong gồm các thư mục HQ, CN1, CN2 và Public. Mỗi thư mục được phân quyền theo group tương ứng, ví dụ người dùng CN1 chỉ truy cập đúng dữ liệu của CN1, không truy cập trái phép dữ liệu của HQ. Ngoài ra, nhóm triển khai DFS Namespace với đường dẫn \\DS.com\DS để người dùng truy cập dữ liệu qua một đường dẫn thống nhất, thay vì phải nhớ nhiều đường dẫn chia sẻ riêng lẻ.</p></details>
+  <div class="box"><h3>Câu có thể bị hỏi</h3><div class="qa-list"><details><summary>DFS có tác dụng gì?</summary><p>DFS gom tài nguyên chia sẻ vào một đường dẫn thống nhất như \DS.com\DS, giúp user không cần nhớ nhiều share riêng.</p></details><details><summary>Vì sao phân quyền theo group?</summary><p>Dễ quản lý. Chỉ cần thêm user vào group tương ứng là user nhận đúng quyền.</p></details><details><summary>NTFS Permission là gì?</summary><p>Quyền truy cập ở cấp hệ thống file: read, write, modify, deny...</p></details></div></div>
+</section>
+
+<section class="slide-card" id="slide-13">
+  <div class="slide-head"><span>Slide 13</span><h2>Web Server và Mail Server</h2></div>
+  <img class="slide-img" src="assets/slides/slide-13.png" alt="Slide 13">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>IIS chạy intranet.ds.com</li><li>DNS giúp truy cập bằng tên miền</li><li>hMailServer + Thunderbird</li><li>CN1/CN2 gửi nhận mail nội bộ</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>Dịch vụ ứng dụng nội bộ</p></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Ở phần dịch vụ ứng dụng, nhóm triển khai IIS Web Server để cung cấp website nội bộ cho doanh nghiệp với tên miền intranet.ds.com. Client trong hệ thống có thể truy cập thành công website này, cho thấy DNS và Web Server đã hoạt động đúng. Bên cạnh đó, nhóm triển khai Mail Server bằng hMailServer, sau đó cấu hình tài khoản trên Thunderbird để kiểm tra gửi nhận mail nội bộ giữa các chi nhánh. Kết quả cho thấy client ở CN1 và CN2 có thể gửi nhận thư cho nhau thành công.</p></details>
+  <div class="box"><h3>Câu có thể bị hỏi</h3><div class="qa-list"><details><summary>Web Server trong bài dùng để làm gì?</summary><p>Cung cấp website nội bộ intranet.ds.com cho nhân viên trong mô hình.</p></details><details><summary>Mail Server có phải mail Internet thật không?</summary><p>Không. Trong lab này chủ yếu là mail nội bộ giữa các chi nhánh.</p></details><details><summary>DNS liên quan gì tới Web/Mail?</summary><p>DNS giúp client tìm đúng IP của intranet.ds.com hoặc mail server.</p></details></div></div>
+</section>
+
+<section class="slide-card" id="slide-14">
+  <div class="slide-head"><span>Slide 14</span><h2>DNS và FSRM</h2></div>
+  <img class="slide-img" src="assets/slides/slide-14.png" alt="Slide 14">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>DNS phân giải DS.com, intranet.ds.com</li><li>nslookup kiểm thử DNS</li><li>FSRM giới hạn DATA 500MB</li><li>Chặn file Audio/Video</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>DNS giúp tìm dịch vụ, FSRM kiểm soát dữ liệu</p></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>DNS Server giữ vai trò phân giải tên miền nội bộ cho toàn hệ thống. Nhờ DNS, người dùng có thể truy cập các dịch vụ bằng tên như DS.com hoặc intranet.ds.com thay vì phải nhớ địa chỉ IP. Kết quả kiểm thử bằng nslookup cho thấy DNS đã phân giải thành công. Bên cạnh DNS, nhóm triển khai FSRM để quản trị tài nguyên lưu trữ trên File Server. Cụ thể, hệ thống giới hạn dung lượng thư mục DATA ở mức 500 MB và chặn các loại tệp Audio, Video nhằm hạn chế người dùng lưu trữ dữ liệu không phù hợp trong môi trường doanh nghiệp.</p></details>
+  <div class="box"><h3>Câu có thể bị hỏi</h3><div class="qa-list"><details><summary>FSRM là gì?</summary><p>File Server Resource Manager, dùng để quản lý dung lượng và loại file trên File Server.</p></details><details><summary>Vì sao chặn Audio/Video?</summary><p>Vì thường dung lượng lớn và không phù hợp dữ liệu công việc; chặn để tiết kiệm tài nguyên lưu trữ.</p></details><details><summary>nslookup dùng làm gì?</summary><p>Kiểm tra DNS có phân giải tên miền sang IP đúng hay không.</p></details></div></div>
+</section>
+
+<section class="slide-card" id="slide-15">
+  <div class="slide-head"><span>Slide 15</span><h2>Group Policy</h2></div>
+  <img class="slide-img" src="assets/slides/slide-15.png" alt="Slide 15">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>Map ổ Z: tự động đến DFS</li><li>Cấm Control Panel</li><li>Cấm đổi hình nền</li><li>Chuẩn hóa máy trạm và quản trị tập trung</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>User đăng nhập domain → chính sách tự áp</p><div class="flow"><span>User đăng nhập domain</span><b>→</b><span>GPO được áp</span><b>→</b><span>Có ổ Z:</span><b>→</b><span>Bị khóa Control Panel/hình nền</span></div></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Sau khi triển khai các dịch vụ dùng chung, nhóm sử dụng Group Policy để quản lý môi trường làm việc của người dùng trong domain. Chính sách đầu tiên là tự động ánh xạ ổ đĩa mạng Z: đến đường dẫn DFS, giúp người dùng sau khi đăng nhập có thể truy cập tài nguyên dùng chung mà không cần cấu hình thủ công. Ngoài ra, nhóm cấu hình chính sách cấm truy cập Control Panel và cấm thay đổi hình nền Desktop. Các chính sách này giúp chuẩn hóa máy trạm, hạn chế người dùng tự ý thay đổi thiết lập hệ thống và hỗ trợ quản trị tập trung hiệu quả hơn.</p></details>
+  <div class="box"><h3>Câu có thể bị hỏi</h3><div class="qa-list"><details><summary>GPO dùng để làm gì?</summary><p>Áp chính sách tập trung cho user và máy tính trong domain.</p></details><details><summary>Vì sao map ổ Z: bằng GPO?</summary><p>Để user đăng nhập là tự có ổ mạng, không cần cấu hình thủ công từng máy.</p></details><details><summary>Nếu GPO không áp thì kiểm tra gì?</summary><p>Kiểm tra user/máy có nằm đúng OU không, GPO đã link chưa, chạy gpupdate /force và kiểm tra DNS/domain.</p></details></div></div>
+</section>
+
+<section class="slide-card" id="slide-16">
+  <div class="slide-head"><span>Slide 16</span><h2>Firewall và Backup</h2></div>
+  <img class="slide-img" src="assets/slides/slide-16.png" alt="Slide 16">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>Mở cổng cần thiết trên Windows Firewall</li><li>UDP 1812 cho RADIUS</li><li>Backup 22h mỗi ngày</li><li>Sao lưu dữ liệu + System State</li><li>Xóa file rồi restore thành công</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>Bảo mật cơ bản + phục hồi dữ liệu</p><div class="flow"><span>Dữ liệu/File Server</span><b>→</b><span>Backup 22:00</span><b>→</b><span>Lỗi hoặc xóa nhầm</span><b>→</b><span>Restore thành công</span></div></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Ở phần cuối của triển khai, nhóm thực hiện một số cấu hình bảo mật cơ bản và sao lưu dữ liệu. Về bảo mật, nhóm cấu hình Windows Firewall để cho phép các dịch vụ cần thiết hoạt động, trong đó có cổng RADIUS UDP 1812 phục vụ xác thực VPN thông qua NPS. Bên cạnh đó, nhóm cấu hình Windows Server Backup để sao lưu dữ liệu định kỳ lúc 22 giờ mỗi ngày. Ngoài sao lưu dữ liệu, hệ thống còn thực hiện sao lưu System State để hỗ trợ phục hồi các thành phần quan trọng của máy chủ. Sau đó, nhóm giả lập sự cố xóa file và kiểm thử khôi phục dữ liệu thành công từ bản sao lưu.</p></details>
+  <div class="box"><h3>Câu có thể bị hỏi</h3><div class="qa-list"><details><summary>UDP 1812 dùng làm gì?</summary><p>Cổng xác thực RADIUS, cần cho NPS xác thực VPN.</p></details><details><summary>System State là gì?</summary><p>Phần trạng thái hệ thống quan trọng, gồm các thành phần cần để phục hồi server/domain khi có sự cố.</p></details><details><summary>Backup kiểm thử thế nào?</summary><p>Giả lập xóa file, sau đó restore từ bản sao lưu và kiểm tra dữ liệu phục hồi.</p></details></div></div>
+</section>
+
+<section class="slide-card" id="slide-17">
+  <div class="slide-head"><span>Slide 17</span><h2>Kết quả kiểm thử</h2></div>
+  <img class="slide-img" src="assets/slides/slide-17.png" alt="Slide 17">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>Các dịch vụ được kiểm tra theo từng chức năng</li><li>Ping, join domain, DNS, VPN, DFS, Mail, GPO, Backup</li><li>Chứng minh hệ thống hoạt động trong lab</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>Bảng minh chứng kết quả</p></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Sau khi triển khai, nhóm tiến hành kiểm thử toàn bộ hệ thống theo từng nhóm chức năng. Kết quả cho thấy DNS và DHCP hoạt động đúng, các máy client nhận được IP và phân giải được tên miền. Kết nối VPN Site-to-Site giúp HQ, CN1 và CN2 liên thông với nhau, còn VPN Client-to-Site cho phép người dùng từ xa kết nối vào mạng nội bộ. Phần xác thực qua NPS/RADIUS cũng hoạt động thành công. Ngoài ra, các dịch vụ như File Server, DFS, Web Server, Mail Server, Group Policy và Backup đều đạt kết quả kiểm thử như mục tiêu ban đầu.</p></details>
+  
+</section>
+
+<section class="slide-card" id="slide-18">
+  <div class="slide-head"><span>Slide 18</span><h2>Đánh giá hệ thống</h2></div>
+  <img class="slide-img" src="assets/slides/slide-18.png" alt="Slide 18">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>Quản trị tập trung</li><li>Liên thông HQ/CN1/CN2</li><li>Người dùng từ xa truy cập được</li><li>Có phân quyền và backup</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>Những gì hệ thống đạt được</p></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Dựa trên kết quả kiểm thử, có thể đánh giá hệ thống đã vận hành tương đối ổn định trong môi trường mô phỏng VMware. Các dịch vụ chính như DNS, DHCP, VPN, Active Directory, File Server, Web Server, Mail Server, Group Policy và Backup đều hoạt động đúng vai trò. Mô hình đã đáp ứng được hai yêu cầu quan trọng là kết nối liên chi nhánh thông qua VPN Site-to-Site và hỗ trợ người dùng từ xa thông qua VPN Client-to-Site. Ngoài ra, việc quản trị tài khoản, tài nguyên và chính sách được thực hiện tập trung trên Windows Server, giúp hệ thống dễ kiểm soát hơn. Dữ liệu cũng được chia sẻ theo phân quyền và có khả năng khôi phục khi xảy ra sự cố.</p></details>
+  
+</section>
+
+<section class="slide-card" id="slide-19">
+  <div class="slide-head"><span>Slide 19</span><h2>Hạn chế</h2></div>
+  <img class="slide-img" src="assets/slides/slide-19.png" alt="Slide 19">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>Mới là lab VMware</li><li>Chưa kiểm thử tải lớn</li><li>Chưa có HA</li><li>Chưa có firewall chuyên dụng</li><li>Chưa có IDS/IPS/MFA</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>Không nói hệ thống hoàn hảo tuyệt đối</p></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Bên cạnh những kết quả đạt được, đề tài vẫn còn một số hạn chế. Trước hết, hệ thống được triển khai trong môi trường mô phỏng VMware nên chưa phản ánh đầy đủ hiệu năng khi vận hành trong doanh nghiệp thực tế. Ngoài ra, mô hình chưa triển khai High Availability cho các dịch vụ quan trọng như Domain Controller, DHCP hoặc VPN, nên nếu một thành phần chính gặp sự cố thì hệ thống có thể bị ảnh hưởng. Về bảo mật, đề tài mới dừng ở mức cơ bản, chưa có Firewall chuyên dụng, chưa tích hợp giám sát tập trung như SIEM hoặc ELK, và chưa áp dụng các cơ chế xác thực nâng cao như MFA hay Zero Trust. Mail Server cũng mới phục vụ trong phạm vi nội bộ, chưa triển khai các cơ chế bảo mật email nâng cao.</p></details>
+  
+</section>
+
+<section class="slide-card" id="slide-20">
+  <div class="slide-head"><span>Slide 20</span><h2>Hướng phát triển</h2></div>
+  <img class="slide-img" src="assets/slides/slide-20.png" alt="Slide 20">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>Bổ sung HA cho server quan trọng</li><li>Firewall chuyên dụng</li><li>Monitoring</li><li>MFA cho VPN</li><li>Backup nâng cao/cloud</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>Nếu triển khai thực tế cần nâng cấp</p></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Từ những hạn chế đã nêu, nhóm đề xuất một số hướng phát triển cho hệ thống. Trước hết, có thể triển khai Additional Domain Controller và cơ chế dự phòng cho các dịch vụ quan trọng như VPN, DHCP và DNS để tăng tính sẵn sàng. Về bảo mật, hệ thống có thể tích hợp MFA cho VPN và tài khoản người dùng, đồng thời từng bước áp dụng mô hình Zero Trust. Về giám sát, có thể xây dựng hệ thống phân tích log tập trung bằng SIEM hoặc ELK để phát hiện bất thường. Ngoài ra, giải pháp sao lưu cũng nên được mở rộng sang Offsite Backup và sao lưu nhiều lớp. Khi triển khai thực tế, hệ thống cũng có thể mở rộng lên mô hình Hybrid Cloud hoặc Cloud để tăng khả năng linh hoạt và mở rộng tài nguyên.</p></details>
+  
+</section>
+
+<section class="slide-card" id="slide-21">
+  <div class="slide-head"><span>Slide 21</span><h2>Kết luận</h2></div>
+  <img class="slide-img" src="assets/slides/slide-21.png" alt="Slide 21">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>Kết nối được các chi nhánh</li><li>Quản trị tập trung dịch vụ</li><li>Kiểm thử chức năng thành công</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>3 ý chốt</p></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Nhìn chung, đề tài đã hoàn thành mục tiêu xây dựng mô hình mạng doanh nghiệp đa chi nhánh gồm HQ, CN1 và CN2. Hệ thống đã triển khai được kết nối VPN Site-to-Site giữa các chi nhánh và VPN Client-to-Site cho người dùng từ xa. Các dịch vụ quản trị tập trung trên Windows Server như Active Directory, DNS, DHCP, File Server, DFS, Web Server, Mail Server, Group Policy, NPS/RADIUS, FSRM và Backup cũng đã được cấu hình và kiểm thử. Kết quả cho thấy mô hình đáp ứng được yêu cầu kết nối an toàn, quản trị tập trung, chia sẻ tài nguyên đúng quyền và hỗ trợ khôi phục dữ liệu cơ bản trong phạm vi môi trường mô phỏng.</p></details>
+  
+</section>
+
+<section class="slide-card" id="slide-22">
+  <div class="slide-head"><span>Slide 22</span><h2>Cảm ơn</h2></div>
+  <img class="slide-img" src="assets/slides/slide-22.png" alt="Slide 22">
+  <div class="grid2">
+    <div class="box"><h3>Ý cần nhớ</h3><ul><li>Cảm ơn thầy và các bạn</li><li>Sẵn sàng nhận câu hỏi</li></ul></div>
+    <div class="box"><h3>Hình dung nhanh</h3><p>Chuẩn bị hỏi đáp</p></div>
+  </div>
+  <details class="script" open><summary>Thoại thuyết trình</summary><p>Phần trình bày của nhóm em đến đây là kết thúc. Nhóm em xin cảm ơn Thầy và các bạn đã lắng nghe. Nhóm em rất mong nhận được góp ý của Thầy để đề tài được hoàn thiện hơn.</p></details>
+  
+</section>
+
+<section class="slide-card" id="hoidap">
+<div class="slide-head"><span>Hỏi đáp</span><h2>Bộ câu hỏi chung để phòng phản biện</h2></div>
+<div class="qa-list"><details><summary>Bài này xây dựng hệ thống gì?</summary><p>Mô hình mạng doanh nghiệp đa chi nhánh gồm HQ, CN1, CN2; dùng VPN để kết nối, Windows Server để quản trị dịch vụ tập trung.</p></details><details><summary>Vì sao server đặt ở HQ?</summary><p>HQ là trung tâm quản trị. Đặt server tập trung giúp dễ quản lý tài khoản, dữ liệu, chính sách và backup.</p></details><details><summary>Nếu triển khai thực tế cần bổ sung gì?</summary><p>Cần firewall chuyên dụng, HA cho server quan trọng, giám sát hệ thống, kiểm thử tải, bảo mật nâng cao như MFA/IDS/IPS.</p></details><details><summary>Điểm hạn chế lớn nhất?</summary><p>Mới triển khai trong lab VMware, chưa kiểm thử tải và độ ổn định trên hạ tầng thật.</p></details><details><summary>Cách trả lời khi bí?</summary><p>Nêu vai trò dịch vụ → cách nhóm dùng trong bài → cách kiểm thử → hạn chế nếu triển khai thực tế.</p></details></div>
+<div class="box"><h3>Checklist trước khi vào phòng báo cáo</h3><div class="checklist"><div>✅ Nhớ domain: <b>DS.com</b></div><div>✅ Nhớ IP server: <b>192.168.10.10</b></div><div>✅ Site-to-Site = nối chi nhánh</div><div>✅ Client-to-Site = user từ xa</div><div>✅ DNS không cấp IP, DHCP mới cấp IP</div><div>✅ Relay không cấp IP, chỉ chuyển tiếp</div><div>✅ Mail chỉ là mail nội bộ lab</div><div>✅ Không nói hệ thống thực tế hoàn hảo</div></div></div>
+</section>
+</main>
+<div class="btns"><a href="#tongquan">↑ Đầu</a><a href="#slide-9">Phần tôi</a></div>
+<footer class="footer">File tự học GitHub Pages - tạo cho báo cáo Chuyên đề 2.</footer>
+</body>
+</html>
